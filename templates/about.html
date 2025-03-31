@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}About - Library Management System{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h2>About Our Library</h2>
+    <p>Learn more about our library management system and services</p>
+</section>
+
+<section class="form-container" style="text-align: left;">
+    <h3 class="form-title">Our Mission</h3>
+    <p style="margin-bottom: 1.5rem;">
+        Our mission is to provide a comprehensive and user-friendly library management system that helps libraries of all sizes efficiently manage their resources, serve their patrons, and promote literacy and learning in their communities.
+    </p>
+    
+    <h3 class="form-title">About the System</h3>
+    <p style="margin-bottom: 1rem;">
+        The Library Management System is designed to streamline the day-to-day operations of libraries, including:
+    </p>
+    <ul style="list-style-type: disc; margin-left: 2rem; margin-bottom: 1.5rem;">
+        <li>Book inventory management</li>
+        <li>Member registration and management</li>
+        <li>Book circulation (issuing and returning)</li>
+        <li>Fine calculation and collection</li>
+        <li>Reporting and analytics</li>
+    </ul>
+    
+    <h3 class="form-title">Contact Information</h3>
+    <div style="margin-bottom: 1.5rem;">
+        <p><strong>Address:</strong> VSSUT,Burla</p>
+        <p><strong>Phone:</strong> 9040784900</p>
+        <p><strong>Email:</strong> ansumanjena996@gmail.com</p>
+        <p><strong>Hours:</strong> Monday - Friday: 9:00 AM - 6:00 PM</p>
+        <p><strong>Weekend Hours:</strong> Saturday: 10:00 AM - 4:00 PM, Sunday: Closed</p>
+    </div>
+    
+    <h3 class="form-title">Library Rules</h3>
+    <ol style="margin-left: 2rem; margin-bottom: 1.5rem;">
+        <li>Members can borrow up to 3 books at a time.</li>
+        <li>The loan period for books is 14 days.</li>
+        <li>A fine of $0.50 per day will be charged for overdue books.</li>
+        <li>Lost or damaged books must be replaced or paid for.</li>
+        <li>Membership cards must be presented when borrowing books.</li>
+        <li>Silence must be maintained in the reading areas.</li>
+        <li>Food and drinks are not allowed in the library.</li>
+    </ol>
+    
+    <h3 class="form-title">Our Team</h3>
+    <div class="features" style="margin-top: 1.5rem;">
+        <div class="feature-card">
+            <img src="{{ url_for('static', filename='images/Ansumanjena.jpg') }}" alt="Core Team Member" style="border-radius: 50%; width: 100px; height: 100px; margin: 0 auto 1rem;">
+            <h4>Ansuman Jena</h4>
+            <p>Core Team Member</p>
+        </div>
+        <div class="feature-card">
+            <img src="{{ url_for('static', filename='images/SSM.jpg') }}" alt="Core Team Member" style="border-radius: 50%; width: 100px; height: 100px; margin: 0 auto 1rem;">
+            <h4>Sreyanshu Sekhar Mohanty</h4>
+            <p>Core Team Member</p>
+        </div>
+        <div class="feature-card">
+            <img src="{{ url_for('static', filename='images/Dipun.jpg') }}" alt="Core Team Member" style="border-radius: 50%; width: 100px; height: 100px; margin: 0 auto 1rem;">
+            <h4>Dipun Barik</h4>
+            <p>Core Team Member</p>
+        </div>
+        <div class="feature-card">
+            <img src="{{ url_for('static', filename='images/Abhijit.jpg') }}" alt="Core Team Member" style="border-radius: 50%; width: 100px; height: 100px; margin: 0 auto 1rem;">
+            <h4>Abhijit Rath</h4>
+            <p>Core Team Member</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Library Management System{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h2>Welcome to the Library Management System</h2>
+    <p>Efficiently manage your library resources with our comprehensive system</p>
+</section>
+
+<section class="features">
+    <div class="feature-card">
+        <div class="feature-icon book-icon"></div>
+        <h3>Book Management</h3>
+        <p>Add, update, and manage your book collection with ease</p>
+        <a href="{{ url_for('books') }}" class="btn">Manage Books</a>
+    </div>
+    <div class="feature-card">
+        <div class="feature-icon member-icon"></div>
+        <h3>Member Management</h3>
+        <p>Keep track of library members and their activities</p>
+        <a href="{{ url_for('members') }}" class="btn">Manage Members</a>
+    </div>
+    <div class="feature-card">
+        <div class="feature-icon issue-icon"></div>
+        <h3>Issue & Return</h3>
+        <p>Streamline the process of issuing and returning books</p>
+        <a href="{{ url_for('issues') }}" class="btn">Issue/Return</a>
+    </div>
+</section>
+
+<section class="stats">
+    <div class="stat-card">
+        <h3>Total Books</h3>
+        <p class="stat-number">{{ book_count }}</p>
+    </div>
+    <div class="stat-card">
+        <h3>Members</h3>
+        <p class="stat-number">{{ member_count }}</p>
+    </div>
+    <div class="stat-card">
+        <h3>Books Issued</h3>
+        <p class="stat-number">{{ issued_count }}</p>
+    </div>
+    <div class="stat-card">
+        <h3>Available Books</h3>
+        <p class="stat-number">{{ available_count }}</p>
+    </div>
+</section>
+{% endblock %}

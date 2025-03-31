@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Library Management System{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>Library Management System</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}" {% if request.path == url_for('index') %}class="active"{% endif %}>Home</a></li>
+                    <li><a href="{{ url_for('books') }}" {% if request.path.startswith('/books') %}class="active"{% endif %}>Books</a></li>
+                    <li><a href="{{ url_for('members') }}" {% if request.path.startswith('/members') %}class="active"{% endif %}>Members</a></li>
+                    <li><a href="{{ url_for('issues') }}" {% if request.path.startswith('/issues') %}class="active"{% endif %}>Issue/Return</a></li>
+                    <li><a href="{{ url_for('about') }}" {% if request.path == url_for('about') %}class="active"{% endif %}>About</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <div class="flash-messages">
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Library Management System. All rights reserved.</p>
+        </footer>
+    </div>
+    {% block scripts %}{% endblock %}
+    
+</body>
+</html>
