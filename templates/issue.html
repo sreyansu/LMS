@@ -99,7 +99,7 @@
                             <span style="color: var(--secondary-color);">Issued</span>
                         {% endif %}
                     </td>
-                    <td>${{ '%.2f'|format(issue.fine_amount) if issue.fine_amount else '-' }}</td>
+                    <td>₹{{ '%.2f'|format(issue.fine_amount) if issue.fine_amount else '-' }}</td>
                 </tr>
                 {% endfor %}
             {% else %}
